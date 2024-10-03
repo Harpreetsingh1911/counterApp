@@ -43,11 +43,11 @@ h2 {
 }
 
 .counter-output {
-  font-size: 2.5rem;
+  font-size: 25px;
+  padding: 12px;
   color: #333;
   font-weight: bold;
 }
-
 .counter-buttons button {
   padding: 10px 15px;
   font-size: 1.1rem;

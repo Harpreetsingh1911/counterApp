@@ -3,7 +3,6 @@ const dec = document.querySelector(".decrement");
 const input = document.querySelector("input");
 const reset = document.querySelector(".reset-button");
 let outputvalue = document.querySelector(".counter-output");
-
 // let output = 0;
 // inc.addEventListener("click", () => {
 //   output += +input.value;
@@ -22,16 +21,31 @@ let outputvalue = document.querySelector(".counter-output");
 // });
 
 //* second method
+let dyncmicOutput = 0;
 
+// debugger;
 inc.addEventListener("click", () => {
   const output = parseInt(outputvalue.innerText);
-  const inputvalue = parseInt(input.value);
-  outputvalue.innerText = output + inputvalue;
+  let inputvalue = parseInt(input.value);
+
+  if (inputvalue === 0 || isNaN(inputvalue)) {
+    outputvalue.innerText = "please Enter Input value";
+    outputvalue.style.fontSize = "22px";
+  } else {
+    dyncmicOutput = dyncmicOutput + inputvalue;
+    outputvalue.innerText = dyncmicOutput;
+  }
 });
 dec.addEventListener("click", () => {
   const output = parseInt(outputvalue.innerText);
   const inputvalue = parseInt(input.value);
-  outputvalue.innerText = output - inputvalue;
+  if (isNaN(inputvalue) || inputvalue === 0) {
+    outputvalue.innerText = "please Enter Input value";
+    outputvalue.style.fontSize = "22px";
+  } else {
+    dyncmicOutput = dyncmicOutput - inputvalue;
+    outputvalue.innerText = dyncmicOutput;
+  }
 });
 
 reset.addEventListener("click", () => {
